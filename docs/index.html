@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Huobi Chain</title>
-    <link rel="icon" href="static/huobi-logo.webp">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="金融公链">
-    <meta name="Keywords" content="blockchain, chain">
-    <link rel="stylesheet" href="./assets/vue.css">
-    <link rel="stylesheet" href="./assets/vuep.css">
-    <link rel="stylesheet" href="./assets/index.css">
-  </head>
-
-  <body>
-    <div id="app"></div>
-    <script>
+<head>
+  <meta charset="UTF-8">
+  <title>Huobi Chain</title>
+  <link rel="icon" href="static/huobi-logo.webp">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="金融公链">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="./_media/custom.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_539333_ah8wb2hv6yknvcxr.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster"rel="stylesheet">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
     window.$docsify = {
-      name: "Huobi Chain",
-      repo: "https://github.com/HuobiGroup/huobi-chain",
-      auto2top: true,
-      loadNavbar: true,
+      name: 'Huobi Chain',
+      repo: 'https://github.com/HuobiGroup/huobi-chain',
       loadSidebar: true,
-      mergeNavbar: true,
-      subMaxLevel: 2,
-      homepage: "README.md",
-      search: {
-        noData: {
-          "/zh-cn/": "找不到结果!",
-          "/": "No results!"
-        },
-        paths: "auto",
-        placeholder: {
-          "/zh-cn/": "搜索",
-          "/": "Search"
-        }
+      loadNavbar: true,
+      subMaxLevel: 6,
+      auto2top: true,
+      markdown: {
+        gfm: true,
+        tables: true,
+      },
+      themeColor: '#25798A',
+      pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
       },
       plugins: [
       function(hook, vm) {
@@ -47,21 +41,18 @@
 
           return editHtml + html;
         });
-
       }
       ]
-    };
-    </script>
-    <script src="./libs/babel.min.js"></script>
-    <script src="./libs/docsify.min.js"></script>
-    <script src="./libs/vue.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-    <script src="./libs/ga.js"></script>
-    <script src="./libs/emoji.js"></script>
-    <script src="./libs/prism-markdown.min.js"></script>
-    <script src="./libs/prism-scss.min.js"></script>
-    <script src="./libs/docsify-pagination.min.js"></script>
-    
-  </body>
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-diff.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
 
+</body>
 </html>
