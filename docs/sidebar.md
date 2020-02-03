@@ -1,5 +1,5 @@
 - **概览**
-	- [关于Huobi-chain](/readme.md)
+	- [关于Huobi-chain](/README.md)
 - **快速开始**
 	- [快速开始](/getting_started.md)
 - **架构设计**
