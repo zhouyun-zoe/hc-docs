@@ -1,21 +1,5 @@
 # Huobi-chain 入门
 
-- [Huobi-chain 入门](#huobi-chain-%e5%85%a5%e9%97%a8)
-  - [安装和运行](#%e5%ae%89%e8%a3%85%e5%92%8c%e8%bf%90%e8%a1%8c)
-    - [安装依赖](#%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96)
-      - [MacOS](#macos)
-      - [ubuntu](#ubuntu)
-      - [centos7](#centos7)
-      - [archlinux](#archlinux)
-    - [直接下载预编译的二进制文件](#%e7%9b%b4%e6%8e%a5%e4%b8%8b%e8%bd%bd%e9%a2%84%e7%bc%96%e8%af%91%e7%9a%84%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%96%87%e4%bb%b6)
-    - [从源码编译](#%e4%bb%8e%e6%ba%90%e7%a0%81%e7%bc%96%e8%af%91)
-      - [获取源码](#%e8%8e%b7%e5%8f%96%e6%ba%90%e7%a0%81)
-      - [安装 rust](#%e5%ae%89%e8%a3%85-rust)
-      - [编译](#%e7%bc%96%e8%af%91)
-    - [运行单节点](#%e8%bf%90%e8%a1%8c%e5%8d%95%e8%8a%82%e7%82%b9)
-    - [运行多节点](#%e8%bf%90%e8%a1%8c%e5%a4%9a%e8%8a%82%e7%82%b9)
-  - [配置说明](#%e9%85%8d%e7%bd%ae%e8%af%b4%e6%98%8e)
-
 ## 安装和运行
 
 ### 安装依赖
