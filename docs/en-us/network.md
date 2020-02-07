@@ -1,18 +1,6 @@
-## 网络设计
+# 网络设计
 
-- [网络设计](#%e7%bd%91%e7%bb%9c%e8%ae%be%e8%ae%a1)
-  - [当前目标](#%e5%bd%93%e5%89%8d%e7%9b%ae%e6%a0%87)
-  - [消息收发](#%e6%b6%88%e6%81%af%e6%94%b6%e5%8f%91)
-    - [节点消息端 (Endpoint)](#%e8%8a%82%e7%82%b9%e6%b6%88%e6%81%af%e7%ab%af-endpoint)
-      - [Gossip](#gossip)
-      - [RPC Call](#rpc-call)
-      - [RPC Response](#rpc-response)
-    - [消息序列化](#%e6%b6%88%e6%81%af%e5%ba%8f%e5%88%97%e5%8c%96)
-    - [消息处理](#%e6%b6%88%e6%81%af%e5%a4%84%e7%90%86)
-    - [消息处理逻辑注册](#%e6%b6%88%e6%81%af%e5%a4%84%e7%90%86%e9%80%bb%e8%be%91%e6%b3%a8%e5%86%8c)
-    - [消息的发送](#%e6%b6%88%e6%81%af%e7%9a%84%e5%8f%91%e9%80%81)
-
-### 当前目标
+## 当前目标
 
 基于 [tentacle crate](https://github.com/nervosnetwork/p2p) 实现一个简单的可工作的 P2P 网络，主要功能如下：
 
@@ -47,13 +35,13 @@
   - 消息压缩: 使用 snappy
   - 消息处理: 基于 handler 注册形式，由各个模块自定义接受消息处理逻辑
 
-### 消息收发
+## 消息收发
 
-#### 节点消息端 (Endpoint)
+### 节点消息端 (Endpoint)
 
 节点通过注册消息端地址对外暴露服务，实现消息接受及处理。目前提供三种类型的地址：
 
-##### Gossip
+#### Gossip
 
 ```text
 /gossip/[service_name]/[message_name]
@@ -61,13 +49,13 @@
 
 消息单向广播以及单播
 
-##### RPC Call
+#### RPC Call
 
 ```text
 /rpc_call/[service_name]/[message_name]
 ```
 
-##### RPC Response
+#### RPC Response
 
 ```text
 /rpc_resp/[service_name]/[message_name]
@@ -75,7 +63,7 @@
 
 RPC 用于节点之间的消息交互通信，RPC Call 发送请求，RPC Response 返回。
 
-#### 消息序列化
+### 消息序列化
 
 序列化采用 protobuf ，消息需要实现 MessageCodec trait 。
 
@@ -91,7 +79,7 @@ pub trait MessageCodec: Sized + Send + Debug + 'static {
 目前针对实现了 serde Serialize 和 Deserialize trait 的消息自动实现了 MessageCodec ，
 采用 bincode 作为中间序列化过渡。
 
-#### 消息处理
+### 消息处理
 
 消息处理需要实现 MessageHandler trait
 
@@ -104,7 +92,7 @@ pub trait MessageHandler: Sync + Send + 'static {
 }
 ```
 
-#### 消息处理逻辑注册
+### 消息处理逻辑注册
 
 完成上述实现之后，可通过如下接口，完成消息逻辑处理的注册。
 
@@ -129,7 +117,7 @@ where
 
 `end` 即签名提到的节点消息端 `Endpoint` 缩写。
 
-#### 消息的发送
+### 消息的发送
 
 ```rust
 #[async_trait]

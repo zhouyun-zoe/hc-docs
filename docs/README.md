@@ -1,13 +1,15 @@
 
 <p align="center">
-  <a href="https://lhammer.cn/You-need-to-know-css/#/">
+  <a href="https://github.com/HuobiGroup/huobi-chain">
     <img src="./static/r-huobichain.jpeg" width="550">
   </a>
   <h3 align="center">让金融更高效，让财富更自由</h3>
   <p align="center">
     <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg"></a>
+    <a href="https://github.com/HuobiGroup/huobi-chain"><img src="https://img.shields.io/badge/Code-Github-brightgreen.svg"></a>
     <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
     <a href="https://github.com/HuobiGroup/huobi-chain"><img src="https://img.shields.io/github/stars/HuobiGroup/huobi-chain.svg?style=social"></a>
+    <a href="https://github.com/HuobiGroup/huobi-chain"><img src="https://img.shields.io/github/forks/HuobiGroup/huobi-chain.svg?style=social"></a>
   </p>
   <p align="center">
      由火币集团和 Nervos Foundation 联合开发<br>
