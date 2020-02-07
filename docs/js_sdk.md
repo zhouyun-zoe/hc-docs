@@ -1,15 +1,15 @@
 # JS-SDK
 
 - [JS-SDK](#JS-SDK)
-  - [Muta](#%e8%ae%be%e8%ae%a1%e8%a6%81%e6%b1%82)
-  - [Client](#%e5%85%b7%e4%bd%93%e8%ae%be%e8%ae%a1)
-  - [Account](#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88)
-  - [Wallet](#%e5%85%b7%e4%bd%93%e8%ae%be%e8%ae%a1)
-  - [Built-in Service](#%e5%85%b7%e4%bd%93%e8%ae%be%e8%ae%a1)
-    - [AssetService](#%e8%a6%81%e6%b1%821)  
-  - [util]()
+  - [Muta](#Muta)
+  - [Client](#Client)
+  - [Account](#Account)
+  - [Wallet](#Wallet)
+  - [Built-in Service](#Built-in_Service)
+    - [AssetService](#AssetService)  
+  - [util](#util)
   
-## JS-SDK介绍
+## JS-SDK
 
 JS-SDK是Muta-chain官方推出的基于javascript的sdk工具.他包装了Muta节点信息,可以用graphql rpc方法,账户管理以及內建service.
 JS-SDK之于Muta-chain类似web3.js之于Ethereum.
@@ -82,7 +82,7 @@ async function example() {
 
 }
 ```
-### Muta 类型
+### Muta
 
 Muta类型是对Muta-Chain的抽象,Muta对象保存了Muta-Chain的参数.
 Muta下拥有[HDWallet]()和[util]()类型.
@@ -144,7 +144,7 @@ let muta = Muta.createDefaultMutaInstance();
 let client = muta.client();
 ```
 
-### Client 类型
+### Client
 
 Client不仅是对SDK向节点发送请求的js代码封装,调用其中方法,可以等效于向节点发起GraphQL rpc请求.
 同时还是Client也包含一些与发送请求相关的方法.
@@ -293,7 +293,7 @@ const tx = await this.client.composeTransaction({
 ```
 
 
-### Account类型
+### Account
 
 Account是Muta-Chain中对于任何账户的概念,和一些常见的区块链一样,地址是唯一的标识.
 Account内包含了一个账户所拥有的私钥,以及其对应的公钥和地址.
@@ -337,7 +337,7 @@ Account的主要功能就是对一笔交易进行签名.
 )
 ```
 
-### Wallet 类型
+### Wallet
 确定性分层钱包HDWallet.和大多数HDWallet一样,Muta-Chain钱包支持bip32,bip39和bip44
  * [bip32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki),
  * [bip39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
@@ -364,11 +364,11 @@ Account的主要功能就是对一笔交易进行签名.
     let account_1 = wallet.deriveAccount(1)// accountIndex = 1 
 ```
 
-### Built-in Service 功能
+### Built-in_Service
 Muta-Chain內建有诸多Built-in Service. 这些Service提供了某一方面完整的功能,为其他內建服务和用户自定义服务提供服务
 类似与在以太坊上公开部署一个功能性的合约,并把他注册到ENS上.
 
-#### AssetService类型
+#### AssetService
 
 AssetService提供了用户快速构建UDT(user defined token)的功能.用户可以通过调用改服务,创建属于自己的UDT.
 UDT是一种基于数量的无差别资产,类似于以太坊ERC20 token
@@ -441,5 +441,5 @@ async function example(){
 }
 ```
 
-### util 工具
+### util
 请参考api文档
