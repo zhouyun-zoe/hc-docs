@@ -1,6 +1,6 @@
 - **概览**
 	- [关于Huobi Chain](/README.md)
-	- [Huobi Chain 测试网信息](/.testnet.md)
+	- [Huobi Chain 测试网信息](/testnet.md)
 - **快速开始**
 	- [快速开始](/getting_started.md)
 - **架构设计**
