@@ -21,10 +21,24 @@ Muta包含4个子项目:
 4. Builtin-Service, 提供对于Muta-chain,內建的Service,直接通行.类似与对以太坊智能合约进行合约级别的API通信.
 
 给出一个完整用例,API请直接参考[API doc]():
+1. 在运行代码片段前,请先单独启动一个使用默认参数的Muta-chain. 虽然请通过npm install muta-sdk安装sdk
+2. 通过默认参数,我们构建了Muta对象,这样可以得到Client对象,用来接下来和节点进行数据交互
+3. 通过HDWallet钱包,生成随机助记词,并派生一个账户Account
+4. 紧接着构建一个AssetService对象,用以和资产服务进行交互
+5.1 和资产服务进行业务交互,创建一个名为LOVE_COIN的UDT资产
+5.2 通过资产ID来查询资产
+5.3 获得一个用户资产的余额
+5.4 向之前查询余额的用户发送一定量的资产
+
 ```js
 async function example() {
 
-  //get a Muta-Chain default instance
+  //!!!please refer to npm package to import related class!!!
+  import { AssetService } from './builtin';
+  import { Muta } from './Muta';
+
+  //get a default Muta instance, with default Muta chain-id and GraphQL endpoint
+  //you should setup a Muta chain with default config before
   const muta = Muta.createDefaultMutaInstance();
 
   // get a client which plays a role to sent GraphQL rpc to the Muta chain, it like you get a web3.eth in Ethereum
@@ -159,16 +173,16 @@ Muta的GraphQL API根据GraphQL,一样也分成两类.
 所以,根据分类:
 
 **Query**
-1. [getBlock](###getBlock), getLatestBlockHeight and waitForNextNBlock
-2. getTransaction
-3. getReceipt
-4. queryService and queryServiceDyn
+1. [getBlock](####getBlock), [getLatestBlockHeight](####getLatestBlockHeight) and [waitForNextNBlock](####waitForNextNBlock)
+2. [getTransaction](####getTransaction)
+3. [getReceipt](####getReceipt)
+4. [queryService](####queryService) and [queryServiceDyn](####queryServiceDyn)
 
 **Mutation**
-1. sendTransaction
+1. [sendTransaction](####sendTransaction)
 
 **Locally**
-1. composeTransaction
+1. [composeTransaction](####composeTransaction)
 获得一个Client对象:
 ```js
 let client = muta.client();
@@ -281,7 +295,7 @@ async function example(){
 
 
 #### composeTransaction
-通过默认菜蔬构建一笔标准的交易
+通过默认参数构建一笔标准的交易
 ```js
 async function example(){
 const tx = await this.client.composeTransaction({
