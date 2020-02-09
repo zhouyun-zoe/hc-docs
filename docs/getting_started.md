@@ -4,20 +4,22 @@
 
 ### 安装依赖
 
-#### MacOS
+<!-- tabs:start -->
+
+#### ** MacOS **
 
 ```
 brew install autoconf libtool
 ```
 
-#### ubuntu
+#### ** ubuntu **
 
 ```
 apt update
 apt install -y git curl openssl cmake pkg-config libssl-dev gcc build-essential clang libclang-dev
 ```
 
-#### centos7
+#### ** centos7 **
 
 ```
 yum install -y centos-release-scl
@@ -27,11 +29,13 @@ yum install -y git make gcc-c++ openssl-devel llvm-toolset-7
 scl enable llvm-toolset-7 bash
 ```
 
-#### archlinux
+#### ** archlinux **
 
 ```
 pacman -Sy --noconfirm git gcc pkgconf clang make
 ```
+
+<!-- tabs:end -->
 
 ### 直接下载预编译的二进制文件
  

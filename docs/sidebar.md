@@ -1,5 +1,6 @@
-- **概览**
-	- [关于Huobi-chain](/README.md)
+- **介绍**
+	- [关于Huobi Chain](/README.md)
+	- [Huobi Chain 测试网信息](/testnet.md)
 - **快速开始**
 	- [快速开始](/getting_started.md)
 - **架构设计**
@@ -16,7 +17,7 @@
 	- [Node management Service](/node_service.md)
 - **合约开发**
 	- [概览](/contract_overview.md)
-	- [从0开发riscv合约的教程(c语言)](/contract_demo.md)
+	- [从0开发riscv合约教程(c语言)](/contract_demo.md)
 - **接口**
 	- [接口](/graphql_api.md)
 - **SDK**
