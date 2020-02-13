@@ -397,7 +397,7 @@ UDT是一种基于数量的无差别资产,类似于以太坊ERC20 token
 构建一个Asset
 ```js
 async function example(){
-  const createdAsset = await service.createAsset({
+  const createdAsset = await service.create_asset({
       name: 'LOVE_COIN',
       supply,
       symbol: 'LUV'
@@ -415,29 +415,14 @@ async function example(){
   
 ```
 
-##### getAsset
-根据asset_id,查询对应的asset
-```js
-async function example(){
-    const asset = await service.getAsset(createdAsset.assetId);
-    /*return data:
-    Asset {
-      asset_id: Hash;
-      name: string;
-      symbol: string;
-      supply: number;
-      issuer: Address;
-    }
-    */
-}
-  
-```
-
 ##### getBalance
 获取一个某一用户在某一资产下的余额
 ```js
 async function example(){
-  const balance = await service.getBalance(createdAsset.assetId, account.address);
+  const assetId = createdAsset.response.ret.id;
+  const {
+      ret: { balance },
+    } = await service.get_balance({asset_id: assetId, user:account.address});
 }
   
 ```
