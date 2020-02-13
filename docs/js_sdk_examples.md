@@ -421,22 +421,22 @@ export interface Asset {
 
 接下来就非常简单了,我们直接创建一个资产,参数类型和之前的相同,不再赘述:
 ```typescript
-  const createdAsset = await service.createAsset({
-    name: 'LOVE_COIN',
-    supply: 1314,
-    symbol: 'LUV',
-  });
-    const assetId = createdAsset.asset_id;
-```
-
-我们通过asset_id来查询一个资产的状态:
-```typescript
-    const asset = await service.getAsset(assetId);
+    const createdAsset = await service.create_asset({
+      name: 'LOVE_COIN',
+      supply,
+      symbol: 'LUV',
+    });
+     const assetId = createdAsset.response.ret.id;
 ```
 
 查询一下某个用户的余额:
 ```typescript
-    const balance = await service.getBalance(assetId, '0x2000000000000000000000000000000000000000');
+    const {
+        ret: { balance : balance0x2000000000000000000000000000000000000000},
+      }= await service.get_balance({
+          asset_id : assetId,
+          user : to,
+      });
 ```
 
 最后是向某个用户发送一定数量的UDT,这里是LOVE_COIN
